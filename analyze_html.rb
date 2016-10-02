@@ -26,8 +26,8 @@ for file in files
 	data[file[0..7]] = table
 end
 
-puts data
+puts JSON.pretty_generate(data)
 
 open("data.json", 'w+') do |f|
-	f.write(data.to_json)
+	f.write(JSON.pretty_generate(data))
 end
